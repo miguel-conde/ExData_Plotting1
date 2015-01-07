@@ -40,9 +40,10 @@ with(powerConData2Days, {
           col="blue")
 })
 
-legend("topright",  lty=1,
+legend("topright", inset=0, lty=1,
        col = c("azure4", "red", "blue"), 
-       legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+       legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),
+       cex=0.7)
 
 dev.copy(png, file = "plot3.png") ## Copy my plot to a PNG file
 dev.off()
