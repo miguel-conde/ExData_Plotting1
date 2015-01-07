@@ -28,11 +28,23 @@ x<-strptime(dates_times, "%Y-%m-%d %H:%M:%S")
 
 plot.new()
 with(powerConData2Days, {
-     plot(x,as.numeric(as.vector(Global_active_power)),type="l",
-          xlab="",
-          ylab="Global Active Power (kilowatts)")
+    plot(x,as.numeric(as.vector(Sub_metering_1)),type="l",
+         xlab="",
+         ylab="Energy sub metering",
+         col="azure4")
+    lines(x,as.numeric(as.vector(Sub_metering_2)),
+          type="l",
+          col="red")
+    lines(x,as.numeric(as.vector(Sub_metering_3)),
+          type="l", 
+          col="blue")
 })
 
+legend("topright", pch = 1, 
+       col = c("azure4", "red", "blue"), 
+       legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1)
 
-dev.copy(png, file = "plot2.png") ## Copy my plot to a PNG file
+lty=(1,1)
+
+dev.copy(png, file = "plot3.png") ## Copy my plot to a PNG file
 dev.off()
