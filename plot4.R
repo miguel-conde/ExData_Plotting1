@@ -53,7 +53,7 @@ with(powerConData2Days, {
 
     # Voltage plot in (1,2)
     plot(x,as.numeric(as.vector(Voltage)),type="l",
-         xlab="",
+         xlab="datetime",
          ylab="Voltage",
          cex.lab=0.7,
          cex.axis=0.7)
@@ -71,14 +71,15 @@ with(powerConData2Days, {
     lines(x,as.numeric(as.vector(Sub_metering_3)),
           type="l", 
           col="blue")
-    legend("topright", lty = 1, 
+    legend("topright", inset=0.03, lty = 1, 
+           bty ="n",
            col = c("azure4", "red", "blue"), 
            legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),
-           cex=0.7)
+           cex=0.60)
 
     # Global_reactive_power in (2,2)
     plot(x,as.numeric(as.vector(Global_reactive_power)),type="l",
-         xlab="",
+         xlab="datetime",
          ylab="Global_reactive_power",
          cex.lab=0.7,
          cex.axis=0.7)
